@@ -1,6 +1,6 @@
 %define	name	guichan
 %define	version	0.8.2
-%define	release	%mkrel 1
+%define	release	%mkrel 2
 %define major   1
 %define api     0.8.1
 %define libname %mklibname %{name} %{api} %{major}
@@ -87,9 +87,9 @@ rm -rf %{buildroot}
 %defattr(-,root,root,-)
 %{_includedir}/*
 %{_libdir}/lib%{name}*.so
+%{_libdir}/*.la
 %{_libdir}/pkgconfig/*.pc
 
 %files -n %{staticdevelname}
 %defattr(-,root,root,-)
 %{_libdir}/*.a
-%{_libdir}/*.la
