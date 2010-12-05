@@ -1,6 +1,6 @@
 %define	name	guichan
 %define	version	0.8.2
-%define	release	%mkrel 2
+%define	release	%mkrel 3
 %define major   1
 %define api     0.8.1
 %define libname %mklibname %{name} %{api} %{major}
