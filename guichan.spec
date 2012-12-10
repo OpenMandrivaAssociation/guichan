@@ -1,28 +1,24 @@
-%define	name	guichan
-%define	version	0.8.2
-%define	release	%mkrel 3
 %define major   1
 %define api     0.8.1
 %define libname %mklibname %{name} %{api} %{major}
 %define develname %mklibname %{name} -d
 %define staticdevelname %mklibname %{name} -d -s
 
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
-Summary:        Portable C++ GUI library for games using Allegro, SDL and OpenGL
+Name:		guichan
+Version:	0.8.2
+Release:	4
+Summary:	Portable C++ GUI library for games using Allegro, SDL and OpenGL
 
-Group:          System/Libraries
-License:        BSD
-URL:            http://guichan.sourceforge.net
-Source0:        http://guichan.googlecode.com/files/%{name}-%{version}.tar.gz
-Patch0:         guichan-0.8.2-mdv-fix-linkage.patch
-BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
+Group:		System/Libraries
+License:	BSD
+URL:		http://guichan.sourceforge.net
+Source0:	http://guichan.googlecode.com/files/%{name}-%{version}.tar.gz
+Patch0:		guichan-0.8.2-mdv-fix-linkage.patch
 
 BuildRequires:  allegro-devel
-Buildrequires:	SDL-devel
-BuildRequires:	SDL_image-devel
-BuildRequires:	GL-devel
+BuildRequires:	pkgconfig(sdl)
+BuildRequires:	pkgconfig(SDL_image)
+BuildRequires:	pkgconfig(gl)
 BuildRequires:	nas-devel
 
 %description
@@ -72,24 +68,16 @@ autoreconf -f -i
 %make
 
 %install
-rm -rf %{buildroot}
-%makeinstall
-
-%clean
-rm -rf %{buildroot}
+%makeinstall_std
 
 %files -n %{libname}
-%defattr(-,root,root,-)
-%doc AUTHORS ChangeLog COPYING NEWS README TODO
 %{_libdir}/lib%{name}*-%{api}.so.*
 
 %files -n %{develname}
-%defattr(-,root,root,-)
 %{_includedir}/*
 %{_libdir}/lib%{name}*.so
-%{_libdir}/*.la
 %{_libdir}/pkgconfig/*.pc
 
 %files -n %{staticdevelname}
-%defattr(-,root,root,-)
 %{_libdir}/*.a
+
