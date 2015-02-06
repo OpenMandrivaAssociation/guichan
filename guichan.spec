@@ -6,7 +6,7 @@
 
 Name:		guichan
 Version:	0.8.2
-Release:	4
+Release:	5
 Summary:	Portable C++ GUI library for games using Allegro, SDL and OpenGL
 
 Group:		System/Libraries
