@@ -11,7 +11,7 @@ Summary:	Portable C++ GUI library for games using Allegro, SDL and OpenGL
 
 Group:		System/Libraries
 License:	BSD
-URL:		http://guichan.sourceforge.net
+URL:		https://guichan.sourceforge.net
 Source0:	http://guichan.googlecode.com/files/%{name}-%{version}.tar.gz
 Patch0:		guichan-0.8.2-mdv-fix-linkage.patch
 
