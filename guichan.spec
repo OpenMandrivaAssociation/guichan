@@ -15,6 +15,11 @@ URL:		https://guichan.sourceforge.net
 Source0:	http://guichan.googlecode.com/files/%{name}-%{version}.tar.gz
 Patch0:		guichan-0.8.2-mdv-fix-linkage.patch
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:  allegro-devel
 BuildRequires:	pkgconfig(sdl)
 BuildRequires:	pkgconfig(SDL_image)
